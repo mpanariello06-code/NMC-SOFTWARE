@@ -1,0 +1,11 @@
+FILTER DATA TEMPLATE (.inp)
+FORMAT: CENTER_FREQ  BANDWIDTH  Q_VALUE  ReVAR  Minp  Mout  PHimp(in)  PHout(in)
+-------------------------------------------------------------------------------
+   1200.000     85.000    14.120   1.600  0.920  0.880       2.250       2.100
+   1750.000     95.000    18.420   1.520  0.900  0.860       2.400       2.300
+   2300.000    120.000    19.170   1.450  0.820  0.790       2.550       2.480
+   3100.000    140.000    22.140   1.380  0.760  0.730       2.700       2.640
+
+NOTES:
+- Replace sample values with real filter data.
+- Numeric rows with at least 8 values are parsed.

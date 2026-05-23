@@ -1,6 +1,7 @@
 import re
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
+from pathlib import Path
 
 
 FIELD_ORDER = [
@@ -15,7 +16,11 @@ FIELD_ORDER = [
 ]
 
 
-def build_inp_template() -> str:
+REPO_ROOT = Path(__file__).resolve().parent
+EXAMPLE_TEMPLATE_PATH = REPO_ROOT / "example.inp"
+
+
+def build_default_inp_template() -> str:
     header = " FILTER DATA TEMPLATE (.inp)\n"
     meta = (
         " FORMAT: CENTER_FREQ  BANDWIDTH  Q_VALUE  ReVAR  Minp  Mout  PHimp(in)  PHout(in)\n"
@@ -39,6 +44,13 @@ def build_inp_template() -> str:
     return header + meta + "\n".join(row_lines) + footer
 
 
+def load_inp_template() -> str:
+    try:
+        return EXAMPLE_TEMPLATE_PATH.read_text(encoding="utf-8")
+    except OSError:
+        return build_default_inp_template()
+
+
 class InpViewerApp:
     def __init__(self, root: tk.Tk) -> None:
         self.root = root
@@ -48,7 +60,7 @@ class InpViewerApp:
         self._set_styles()
 
         self.inp_data: list[dict[str, float]] = []
-        self.template_text_value = build_inp_template()
+        self.template_text_value = load_inp_template()
         self.loaded_content = self.template_text_value
 
         self._build_menu()

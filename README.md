@@ -8,6 +8,11 @@ Basic desktop app for opening and previewing `.inp` files.
 python app.py
 ```
 
+## Example template file
+
+- `/home/runner/work/NMC-SOFTWARE/NMC-SOFTWARE/example.inp` is included in the working folder as a ready-to-use template dataset.
+- The app loads this file as the template preview by default.
+
 ## Current features
 
 - `file` menu with:
