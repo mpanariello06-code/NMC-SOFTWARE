@@ -10,10 +10,15 @@ python app.py
 
 ## Current features
 
-- `File` menu with:
-  - `Open INP` (implemented)
-  - `Open Ideal` (placeholder)
-- Opens `.inp`/text files and shows the file text in a child window
+- `file` menu with:
+  - `open inp` (implemented)
+  - `open ideal` (placeholder)
+- More polished interface:
+  - title/header section
+  - quick action buttons
+  - split layout with template panel + parsed data preview panel
+- Built-in INP template (modeled after the shared example style) shown in the main window
+- Opens `.inp`/text files and shows file text in a styled child preview window
 - Parses numeric rows and stores values in this order:
   1. Center frequency
   2. Bandwidth
